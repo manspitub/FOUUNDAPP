@@ -1,59 +1,124 @@
 
+   <mat-toolbar color="primary">
+    <mat-toolbar-row >
+      <span><img src="../../../assets/aqu77ezeqrzbsd0rdsj3.png" width="30px" alt="Logo"></span>
+     <div style="padding: 50px;"></div>
+      <p style="font-family:   'Arial Narrow Bold', sans-serif;">Yes we can, <b style="color: black;">find it all</b> </p>
+      <span class="example-spacer"></span>
+      <mat-icon> phone</mat-icon>
+      <p style="padding: 50px;">+7 (999) 893-32-56</p>
+      <br >
+      <div>  <p style="color: lightskyblue;"> Oficinas Manuel Spínola</p></div>
+    </mat-toolbar-row>
+    </mat-toolbar>
+    <br> <br> <br>
 <div class="container">
   <div [hidden]="submitted">
-    <h1>Hero Form</h1>
-    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    <h1 style="color: red;">Has perdido un Objeto</h1>
+    <h2 style="text-align: center; color: white; align-items: center; justify-content: center; background-color: red; ">¿Qué es?</h2>
+    <form (ngSubmit)="onSubmit()" method="post" id="formLostObject" #lostObjectForm="ngForm">
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name"
-               required
-               [(ngModel)]="model.name" name="name"
-               #name="ngModel">
-        <div [hidden]="name.valid || name.pristine"
-             class="alert alert-danger">
-          Name is required
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="alterEgo">Alter Ego</label>
-        <input type="text" class="form-control" id="alterEgo"
-               [(ngModel)]="model.alterEgo" name="alterEgo">
-      </div>
-
-      <div class="form-group">
-        <label for="power">Hero Power</label>
-        <select class="form-control" id="power"
-                required
-                [(ngModel)]="model.power" name="power"
-                #power="ngModel">
-          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        <label for="categoria">Categoria</label>
+        <select class="form-control" id="categoria"
+                requiredf
+                [(ngModel)]="newLostObject.categoria" name="categoria"
+                >
+          <option *ngFor="let item of categoria" [value]="item">{{item}}</option>
         </select>
-        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
-          Power is required
-        </div>
+
       </div>
 
-      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
-      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+      <div class="form-group">
+
+        <label for="subCategoria">
+          Subcategoría
+        </label>
+        <input type="text" class="form-control" id="subCategoria" required
+        [(ngModel)]="newLostObject.subCategoria" name="subCategoria" #subCategoria="ngModel">
+        <div style="color: red;" [hidden]="subCategoria.valid || subCategoria.pristine"
+        class="alert alert-danger">
+        Subcategoría is required
+   </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="modelo">
+          Modelo, Marca o tipo de objeto
+        </label>
+        <input type="text" class="form-control" id="modelo" required
+        [(ngModel)]="newLostObject.modelo" name="modelo" #modelo="ngModel">
+        <div style="color: red;" [hidden]="modelo.valid || modelo.pristine"
+        class="alert alert-danger">
+        Model is required
+   </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="color">
+          Color
+        </label>
+        <input type="color" class="form-control" id="color" required
+        [(ngModel)]="newLostObject.color" name="color" #color="ngModel">
+        <div style="color: red;" [hidden]="color.valid || color.pristine"
+        class="alert alert-danger">
+        Colour is required
+   </div>
+
+      </div>
+
+      <br> <br>
+      <div class="form-group">
+
+        <label for="identificado">
+          ¿El objeto estaba identificado?
+        </label>
+        <input type="radio" class="form-control" name="identificado" [(ngModel)]="newLostObject.identificado" value="yes" id="identificado" required ngValue=true>
+        <label for="yes">Yes</label>
+
+        <input type="radio" class="form-control" name="identificado" [(ngModel)]="newLostObject.identificado" value="no" id="identificado"  required ngValue=false>
+        <label for="no">No</label>
+
+        <button type="submit" class="btn btn-success" [disabled]="!lostObjectForm.form.valid">Submit</button>
+        <button type="button" class="btn btn-default" (click)="newObjectLost(); lostObjectForm.reset()">New Object Lost</button>
+      </div>
+<div [hidden]="submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-xs-3"><b>Categoría</b></div>
+    <div class="col-xs-9">{{ newLostObject.categoria }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3"><b>Sub Categoría</b></div>
+    <div class="col-xs-9">{{ newLostObject.subCategoria }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3"><b>Modelo</b></div>
+    <div class="col-xs-9">{{ newLostObject.modelo }}</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3"><b>identificado</b></div>
+    <div class="col-xs-9" >{{ newLostObject.modelo}}</div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-3"><b>Color en hexadecimal</b></div>
+  <div class="col-xs-9" >{{ newLostObject.color}}</div>
+</div>
+<br>
+
+
+
+
+
     </form>
   </div>
 
-  <div [hidden]="!submitted">
-    <h2>You submitted the following:</h2>
-    <div class="row">
-      <div class="col-xs-3">Name</div>
-      <div class="col-xs-9">{{ model.name }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Alter Ego</div>
-      <div class="col-xs-9">{{ model.alterEgo }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Power</div>
-      <div class="col-xs-9">{{ model.power }}</div>
-    </div>
-    <br>
-    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
-  </div>
+
 </div>

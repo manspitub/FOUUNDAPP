@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fouundapp": {
+      "hosting": {
+        "angular-lost-objects": [
+          "fouundapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fouundapp"
+  }
+}

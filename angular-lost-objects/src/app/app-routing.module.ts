@@ -6,7 +6,8 @@ import { LostObjectRegistrateComponent } from './components/lost-object-registra
 const routes: Routes = [
   {path: 'landpage', component: LandpageComponent},
   {path: '', component: LandpageComponent},
-  {path: 'lost-object', component: LostObjectRegistrateComponent}
+  {path: 'lost-object', component: LostObjectRegistrateComponent},
+  
 ];
 
 @NgModule({

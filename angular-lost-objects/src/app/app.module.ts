@@ -9,12 +9,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialImportsModule } from './modules/material-imports.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule, USE_DEVICE_LANGUAGE, USE_EMULATOR as USE_AUTH_EMULATOR } from '@angular/fire/compat/auth';
+import { AngularFireAuthGuardModule } from '@angular/fire/compat/auth-guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     LostObjectRegistrateComponent,
-    LandpageComponent,
+    LandpageComponent
 
   ],
   imports: [
@@ -23,7 +30,12 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialImportsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireAuthGuardModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,14 +1,23 @@
 export class LostObjectDto{
 
-  
 
-  constructor(
-    public categoria: string,
-    public subCategoria: string,
-    public modelo: string,
-    public color: string,
-    public identificado: boolean
-  ) {}
+  categoria: string;
+  subCategoria: string;
+  modelo: string;
+  color: string;
+  identificado: boolean;
+
+
+
+  constructor() {
+    this.categoria=''
+    this.modelo=''
+    this.color=''
+    this.identificado=false
+    this.subCategoria=''
+  }
+
+
 
 
 }
