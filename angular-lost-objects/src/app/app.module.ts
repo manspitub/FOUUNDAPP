@@ -24,15 +24,23 @@ import { LostObjectWhenComponent } from './components/lost-object-when/lost-obje
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CorrectComponent } from './components/correct/correct.component';
+import { FoundObjectWhatComponent } from './components/found-object-what/found-object-registrate.component';
+import { FoundObjectWhereComponent } from './components/found-object-where/found-object-where.component';
+import { FoundObjectWhenComponent } from './components/found-object-when/found-object-when.component';
+import { Correct2Component } from './components/correct2/correct2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LostObjectWhatComponent,
+    FoundObjectWhatComponent,
     LandpageComponent,
     LostObjectWhereComponent,
+    FoundObjectWhereComponent,
+    FoundObjectWhenComponent,
     LostObjectWhenComponent,
-    CorrectComponent
+    CorrectComponent,
+    Correct2Component
 
   ],
   imports: [

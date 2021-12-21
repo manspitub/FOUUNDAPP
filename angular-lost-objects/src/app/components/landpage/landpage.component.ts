@@ -62,5 +62,13 @@ export class LandpageComponent implements OnInit {
     this.router.navigate(['lost-object-what'])
   }
 
+  init2(){
+    if(localStorage.getItem('uid') == null){
+      return alert('Usted no ha iniciado sesión. Debe iniciar para continuar')
+    }else
+
+    this.router.navigate(['found-object-what'])
+  }
+
 
 }
