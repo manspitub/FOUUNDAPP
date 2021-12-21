@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row >
+    <span><img src="../../../assets/aqu77ezeqrzbsd0rdsj3.png" width="30px" alt="Logo" routerLink="/"></span>
+   <div style="padding: 50px;"></div>
+    <p style="font-family:   'Arial Narrow Bold', sans-serif;">Yes we can, <b style="color: black;">find it all</b> </p>
+    <span class="example-spacer"></span>
+    <mat-icon> phone</mat-icon>
+    <p style="padding: 50px;">+7 (999) 893-32-56</p>
+    <br >
+    <div>  <p style="color: lightskyblue;"> Oficinas Manuel Spínola</p></div>
+  </mat-toolbar-row>
+  </mat-toolbar>
+
+
+<input type="text" [(ngModel)]="adress" />
+<button (click)="searchAddress()">Localizar</button>
+<div *ngIf="apiLoaded | async">
+    <google-map
+      [center]="lostObjectLatLg">
+      <map-marker
+              (mapDragend)="updateLocationMarker($event)"
+              [position]="lostObjectLatLg"
+              [options]="markerOptions"></map-marker>
+    </google-map>
+    <button routerLink="/lost-object-when" mat-button class="primary" (click)="locationObjectLost()" >Siguiente</button>
+
+  </div>
+

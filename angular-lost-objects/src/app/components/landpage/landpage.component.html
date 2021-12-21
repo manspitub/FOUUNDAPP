@@ -4,6 +4,13 @@
       <span><img src="../../../assets/aqu77ezeqrzbsd0rdsj3.png" width="30px" alt="Logo"></span>
      <div style="padding: 50px;"></div>
       <p style="font-family:   'Arial Narrow Bold', sans-serif;">Yes we can, <b style="color: black;">find it all</b> </p>
+      <button mat-button class="primary" (click)="login()">Log</button>
+      <button mat-button class="primary" (click)="logout()">Logout</button>
+      <div class="usuario">
+        <span class="example-name">{{ getName() }}</span>
+        <img class="photo" width="48px" [src]="getPhoto()" />
+
+      </div>
       <span class="example-spacer"></span>
       <mat-icon> phone</mat-icon>
       <p style="padding: 50px;">+7 (999) 893-32-56</p>
@@ -13,8 +20,8 @@
     </mat-toolbar>
     <body>
       <div  style="width: 100%; align-items: center; display: flex; justify-content: center;  background-color: lightblue; height: 300px; font-size: 40px;">EN ESTA PLATAFORMA USTED PODRÁ RECUPERAR SUS VALIOSOS OBJETOS</div>
-      <div routerLink= "/lost-object" style="  font-size: 50px; width: 50%; height: 60%; background-color: red; align-items: center; display: flex; justify-content: center; float: left;" >HE  PERDIDO  UN  OBJETO</div>
-      <div style="  font-size: 50px; width: 50%; height: 60%; background-color: green; align-items: center; display: flex; justify-content: center; float: right; " >HE  PERDIDO  UN  OBJETO</div>
+      <div (click)="init()"   style="  font-size: 50px; width: 50%; height: 60%; background-color: red; align-items: center; display: flex; justify-content: center; float: left;" >HE  PERDIDO  UN  OBJETO</div>
+      <div style="  font-size: 50px; width: 50%; height: 60%; background-color: green; align-items: center; display: flex; justify-content: center; float: right; " >HE  ENCONTRADO UN OBJETO</div>
 
     </body>
 

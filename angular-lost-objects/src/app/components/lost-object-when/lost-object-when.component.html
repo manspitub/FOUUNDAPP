@@ -1,0 +1,33 @@
+
+
+   <mat-toolbar color="primary">
+    <mat-toolbar-row >
+      <span><img src="../../../assets/aqu77ezeqrzbsd0rdsj3.png" width="30px" alt="Logo"></span>
+     <div style="padding: 50px;"></div>
+      <p style="font-family:   'Arial Narrow Bold', sans-serif;">Yes we can, <b style="color: black;">find it all</b> </p>
+      <span class="example-spacer"></span>
+      <mat-icon> phone</mat-icon>
+      <p style="padding: 50px;">+7 (999) 893-32-56</p>
+      <br >
+      <div>  <p style="color: lightskyblue;"> Oficinas Manuel Spínola</p></div>
+    </mat-toolbar-row>
+    </mat-toolbar>
+    <br> <br> <br>
+<div class="container">
+  <div >
+    <h1 style="color: red; text-align: center;">Has perdido un Objeto</h1>
+    <h2 style="text-align: center; color: white; align-items: center; justify-content: center; background-color: red; ">¿Cuando?</h2>
+
+
+
+</div>
+
+
+<mat-form-field style="width: 900px;" appearance="fill">
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" [(ngModel)]="lostDate">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<button mat-button color="primary" routerLink="/correct" (click)="objectLostDate()">Finalizar</button>

@@ -16,11 +16,11 @@ const DEFAULT_HEADERS = {
 @Injectable({
   providedIn: 'root'
 })
-export class LostObjectService {
+export class FoundObjectService {
 
   constructor( private firestore: AngularFirestore) { }
 
-  postLostObject(lostObject: LostObject){
+  postFoundObject(lostObject: LostObject){
     let userId = localStorage.getItem('uid')
     return this.firestore.collection(`lostObjects/${userId}/what`).add({
       categoria: lostObject.categoria,
@@ -32,7 +32,7 @@ export class LostObjectService {
     });
   }
 
-  postLostObjectLocation(lat: number, long: number){
+  postFoundObjectLocation(lat: number, long: number){
     let userId = localStorage.getItem('uid')
     return this.firestore.collection(`lostObjects/${userId}/where`).add({
       lat  :  lat,
@@ -41,7 +41,7 @@ export class LostObjectService {
     })
   }
 
-  postLostObjectTime(date: Date){
+  postFoundObjectTime(date: Date){
     let userId = localStorage.getItem('uid')
     return this.firestore.collection(`lostObjects/${userId}/whem`).add({
       date: date,

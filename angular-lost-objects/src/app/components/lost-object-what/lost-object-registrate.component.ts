@@ -8,7 +8,7 @@ import { LostObjectService } from 'src/app/services/lost-object.service';
   templateUrl: './lost-object-registrate.component.html',
   styleUrls: ['./lost-object-registrate.component.css']
 })
-export class LostObjectRegistrateComponent implements OnInit {
+export class LostObjectWhatComponent implements OnInit {
 
   constructor(private lostObjectService: LostObjectService,private dialog: MatDialog ) { }
 
@@ -28,7 +28,6 @@ export class LostObjectRegistrateComponent implements OnInit {
 
   newObjectLost(){
     this.lostObjectService.postLostObject(this.newLostObject)
-
   }
 
 

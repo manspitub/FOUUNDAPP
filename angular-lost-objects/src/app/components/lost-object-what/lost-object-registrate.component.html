@@ -82,8 +82,8 @@
         <input type="radio" class="form-control" name="identificado" [(ngModel)]="newLostObject.identificado" value="no" id="identificado"  required ngValue=false>
         <label for="no">No</label>
 
-        <button type="submit" class="btn btn-success" [disabled]="!lostObjectForm.form.valid">Submit</button>
-        <button type="button" class="btn btn-default" (click)="newObjectLost(); lostObjectForm.reset()">New Object Lost</button>
+        <button  type="submit" class="btn btn-success" [disabled]="!lostObjectForm.form.valid">Submit</button>
+        <button routerLink="/lost-object-where" type="button" class="btn btn-default" (click)="newObjectLost(); lostObjectForm.reset()">New Object Lost</button>
       </div>
 <div [hidden]="submitted">
   <h2>You submitted the following:</h2>

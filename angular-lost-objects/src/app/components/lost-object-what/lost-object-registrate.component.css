@@ -231,3 +231,13 @@ textarea {
   background-color: #EF0000;
 }
 
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.color{
+  color: red;
+  background-color: #EF0000;
+}
+
+
